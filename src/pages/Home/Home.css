@@ -1,0 +1,461 @@
+/* src/pages/Home/Home.css */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: #0d0d0d;
+}
+
+/* Фоновий градієнт ззаду мотоцикла */
+.hero__bg-gradient {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 212, 170, 0.12) 0%,
+    rgba(0, 150, 130, 0.06) 30%,
+    rgba(0, 100, 90, 0.02) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  min-height: 100vh;
+}
+
+/* ===== ЛІВИЙ БЛОК ===== */
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-left: 20px;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero__title-top {
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: #ffffff;
+  display: block;
+}
+
+.hero__title-bottom {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero__title-cyan {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #5efcfb;
+}
+
+.hero__title-white {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+/* CTA Button */
+.hero__cta--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 48px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  align-self: flex-start;
+  background: linear-gradient(135deg, #5efcfb 0%, #00d4aa 100%);
+  color: #0a1a1a;
+  box-shadow:
+    0 4px 30px rgba(0, 212, 170, 0.3),
+    0 0 60px rgba(0, 212, 170, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__cta--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.hero__cta--primary:hover::before {
+  left: 100%;
+}
+
+.hero__cta--primary:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 40px rgba(0, 212, 170, 0.4),
+    0 0 80px rgba(0, 212, 170, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.hero__cta--primary:active {
+  transform: translateY(-1px);
+}
+
+/* ===== ЦЕНТРАЛЬНИЙ БЛОК ===== */
+.hero__center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero__moto-img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
+  animation: motoFloat 6s ease-in-out infinite;
+}
+
+@keyframes motoFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(-0.3deg);
+  }
+}
+
+/* Dust / Dirt effect */
+.hero__dust {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  width: 50%;
+  height: 100px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(180, 140, 80, 0.25) 0%,
+    rgba(180, 140, 80, 0.1) 40%,
+    transparent 70%
+  );
+  filter: blur(15px);
+  z-index: 1;
+  animation: dustPulse 4s ease-in-out infinite;
+}
+
+@keyframes dustPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Particles */
+.hero__dust-particles {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 60%;
+  height: 150px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(180, 140, 80, 0.6);
+  animation: particleFly 3s ease-out infinite;
+}
+
+.particle--1 {
+  width: 6px; height: 6px;
+  bottom: 20px; left: 15%;
+  animation-delay: 0s;
+  animation-duration: 2.5s;
+}
+
+.particle--2 {
+  width: 4px; height: 4px;
+  bottom: 30px; left: 25%;
+  animation-delay: 0.3s;
+  animation-duration: 2.8s;
+}
+
+.particle--3 {
+  width: 8px; height: 8px;
+  bottom: 10px; left: 35%;
+  animation-delay: 0.6s;
+  animation-duration: 3s;
+}
+
+.particle--4 {
+  width: 3px; height: 3px;
+  bottom: 40px; left: 20%;
+  animation-delay: 0.9s;
+  animation-duration: 2.2s;
+}
+
+.particle--5 {
+  width: 5px; height: 5px;
+  bottom: 15px; left: 45%;
+  animation-delay: 1.2s;
+  animation-duration: 2.7s;
+}
+
+.particle--6 {
+  width: 4px; height: 4px;
+  bottom: 25px; left: 30%;
+  animation-delay: 1.5s;
+  animation-duration: 3.2s;
+}
+
+@keyframes particleFly {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(5px, -20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(40px, -80px) scale(0.3);
+  }
+}
+
+/* ===== ПРАВИЙ БЛОК ===== */
+.hero__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.hero__slogan {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__slogan-main {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.hero__slogan-sub {
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .hero__container {
+    grid-template-columns: 1fr 1.2fr 0.9fr;
+    gap: 30px;
+    padding: 0 24px;
+  }
+
+  .hero__bg-gradient {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero__container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 24px;
+  }
+
+  .hero__left {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-left: 0;
+    gap: 32px;
+  }
+
+  .hero__center {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    order: 3;
+  }
+
+  .hero__right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding-right: 0;
+    align-items: flex-start;
+  }
+
+  .hero__slogan {
+    text-align: left;
+  }
+
+  .hero__moto-img {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 16px;
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__left {
+    grid-column: 1;
+    grid-row: 1;
+    order: 1;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .hero__center {
+    grid-column: 1;
+    grid-row: 2;
+    order: 2;
+  }
+
+  .hero__right {
+    grid-column: 1;
+    grid-row: 3;
+    order: 3;
+    align-items: center;
+  }
+
+  .hero__slogan {
+    text-align: center;
+  }
+
+  .hero__title-top {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
+  .hero__title-cyan,
+  .hero__title-white {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+
+  .hero__moto-img {
+    max-width: 350px;
+  }
+
+  .hero__cta--primary {
+    align-self: center;
+    padding: 16px 40px;
+    font-size: 1rem;
+  }
+
+  .hero__bg-gradient {
+    width: 350px;
+    height: 350px;
+    left: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title-top {
+    font-size: 2.2rem;
+  }
+
+  .hero__title-cyan,
+  .hero__title-white {
+    font-size: 1.6rem;
+  }
+
+  .hero__moto-img {
+    max-width: 280px;
+  }
+
+  .hero__cta--primary {
+    padding: 14px 32px;
+    font-size: 0.95rem;
+  }
+
+  .hero__slogan-main {
+    font-size: 0.95rem;
+  }
+
+  .hero__slogan-sub {
+    font-size: 0.85rem;
+  }
+}

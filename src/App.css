@@ -1,0 +1,74 @@
+/* 
+  1. Використовуй більш інтуїтивне боксове моделювання 
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 
+  2. Прибрати відступи з боку браузера 
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  3. Дозволити наслідування шрифту для всіх елементів форми 
+*/
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* 
+  4. Перевстановити базові параметри 
+*/
+html {
+  -webkit-text-size-adjust: 100%; /* Запобігає зміненню розміру тексту при повороті */
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Покращує рендеринг шрифтів на Mac */
+}
+
+/* 
+  5. Прибрати стилі для зображень 
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 
+  6. Прибрати вбудовані стилі списків 
+*/
+ul, ol {
+  list-style: none;
+}
+
+/* 
+  7. Прибрати стилі посилань за замовчуванням 
+*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+  8. Базові стилі для таблиць 
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 
+  9. Плавний скрол для всієї сторінки 
+*/
+html {
+  scroll-behavior: smooth;
+}
