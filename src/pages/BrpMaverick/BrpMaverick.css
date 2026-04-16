@@ -1,0 +1,206 @@
+/* =========================================
+   BASE STYLES (Desktop & Large Screens)
+   ========================================= */
+
+   .brp-maverick {
+    position: relative;
+    width: 100%;
+    min-height: 100dvh; /* Dynamic Viewport Height для мобільних браузерів */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #0a0a0a;
+  }
+  
+  .brp-maverick__container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100dvh;
+    padding-top: 180px;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+  }
+  
+  /* Заголовок */
+  .brp-maverick__title {
+    font-size: clamp(40px, 6vw, 90px);
+    font-weight: 900;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: -100px;
+    line-height: 1.1;
+    text-shadow: 
+      0 2px 10px rgba(0, 0, 0, 0.8),
+      0 2px 20px rgba(0, 0, 0, 0.5);
+    user-select: none;
+  }
+  
+  /* Футер з кнопкою */
+  .brp-maverick__footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Кнопка */
+  .brp-maverick__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 18px 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0a0a0a;
+    background-color: #40e0d0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);
+  }
+  
+  /* Анімація кнопки (тільки hover) */
+  .brp-maverick__button:hover {
+    background-color: #3ddbd1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(64, 224, 208, 0.5);
+  }
+  
+  .brp-maverick__button:active {
+    transform: translateY(-1px);
+  }
+  
+  .brp-maverick__button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+  }
+  
+  /* Фон */
+  .brp-maverick::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://etk-9eg.pages.dev/assets/gen/maverick_bg1_1920w.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+  
+  /* Оверлей */
+  .brp-maverick::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* =========================================
+     MEDIA QUERIES (Adaptive)
+     ========================================= */
+  
+  /* Tablets & Small Laptops (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    .brp-maverick__container {
+      padding-top: 140px;
+      padding-bottom: 80px;
+    }
+    
+    .brp-maverick__title {
+      font-size: clamp(36px, 7vw, 70px);
+    }
+  }
+  
+  /* Mobile Landscape & Large Phones (max-width: 768px) */
+  @media (max-width: 768px) {
+    .brp-maverick__container {
+      padding: 0 24px;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      justify-content: space-evenly; /* Більш рівномірний розподіл */
+    }
+  
+    .brp-maverick__title {
+      font-size: clamp(32px, 8vw, 50px);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    }
+  
+    .brp-maverick__button {
+      padding: 16px 40px;
+      font-size: 18px;
+    }
+  }
+  
+  /* Mobile Portrait (max-width: 480px) */
+  @media (max-width: 480px) {
+    .brp-maverick__container {
+      padding: 0 16px;
+      padding-top: 80px;
+      padding-bottom: 40px;
+      /* На малих екранах краще центрувати контент вертикально, ніж розтягувати */
+      justify-content: center; 
+      gap: 40px; 
+    }
+  
+    .brp-maverick__title {
+      font-size: clamp(28px, 10vw, 42px);
+      line-height: 1.2;
+    }
+  
+    .brp-maverick__button {
+      width: 100%;
+      max-width: 280px;
+      padding: 16px 24px;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+    
+    /* Зменшуємо оверлей на мобільних, щоб фото було яскравішим */
+    .brp-maverick::after {
+      background: rgba(0, 0, 0, 0.2); 
+    }
+  }
+  
+  /* Very small devices (max-width: 360px) */
+  @media (max-width: 360px) {
+    .brp-maverick__title {
+      font-size: 26px;
+    }
+    
+    .brp-maverick__button {
+      font-size: 14px;
+      padding: 14px 20px;
+    }
+  }
+  
+  /* Safe Area for iPhone (Notch / Home Indicator) */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .brp-maverick__container {
+      padding-bottom: max(40px, env(safe-area-inset-bottom));
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .brp-maverick__button {
+      transition: none;
+    }
+    .brp-maverick__button:hover {
+      transform: none;
+    }
+  }

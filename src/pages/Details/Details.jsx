@@ -1,4 +1,3 @@
-// src/pages/Details/Details.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import './Details.css';
 
@@ -32,6 +31,17 @@ const Details = () => {
   return (
     <section className="details" aria-label="Переваги">
       <div className="details__container">
+        
+        {/* 🔹 Заголовок та опис */}
+        <header className="details__header">
+          <h2 className="details__title">
+            Чому обирають нас
+          </h2>
+          <p className="details__description">
+            Ми створили умови, де кожен райдер відчуває волю
+          </p>
+        </header>
+
         <div className="details__grid">
 
           {/* Card 1 - Dark with helmet icon */}
@@ -70,7 +80,7 @@ const Details = () => {
                 />
               </svg>
             </div>
-            <h3 className="details__card-title">Преміальні байки</h3>
+            <h3 className="details__card-title">Байки</h3>
             <p className="details__card-text">
               Рівень і потужність,<br />
               що відчувається без<br />
@@ -128,7 +138,7 @@ const Details = () => {
               </svg>
             </div>
             <h3 className="details__card-title details__card-title--dark">
-              Спокій та впевненість
+              Впевненість
             </h3>
             <p className="details__card-text details__card-text--dark">
               Все продумано — професійний<br />
@@ -170,8 +180,7 @@ const Details = () => {
               </svg>
             </div>
             <h3 className="details__card-title">
-              Без одноманіть і<br />
-              нудьги
+              Без нудьги
             </h3>
             <p className="details__card-text">
               Неповторні маршрути<br />

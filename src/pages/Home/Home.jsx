@@ -32,7 +32,10 @@ const Home = () => {
               src="https://etk-9eg.pages.dev/assets/gen/hero_moto_1400w.webp"
               alt="Райдер на ендуро мотоциклі"
               className="hero__moto-img"
-              loading="eager"
+              loading="lazy" // Змінено на lazy loading
+              width="600"    // Додано для запобігання CLS (Cumulative Layout Shift)
+              height="500"   // Додано для запобігання CLS
+              decoding="async" // Додаткова оптимізація декодування
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = 'https://via.placeholder.com/600x500/0d1a1a/00d4aa?text=Enduro+Rider';

@@ -4,6 +4,10 @@ import Header from './../Header/Header';
 import Details from './../../pages/Details/Details';
 import FAQ from '../FAQ/FAQ';
 import './Layout.css';
+import Pricing from '../../pages/Pricing/Pricing';
+import MotorcycleSlider from '../../pages/MotorcycleSlider/MotorcycleSlider';
+import BrpMaverick from '../../pages/BrpMaverick/BrpMaverick';
+import GiftCertificate from '../../pages/GiftCertificate/GiftCertificate';
 
 const Layout = () => {
   const location = useLocation();
@@ -14,8 +18,12 @@ const Layout = () => {
       <main className="layout__main" key={location.pathname}>
         <Outlet />
         <Details />
+        <Pricing />
+        <MotorcycleSlider />
+        <BrpMaverick />
+        <GiftCertificate />
       </main>
-      <FAQ />
+      {/* <FAQ /> */}
     </div>
   );
 };

@@ -1,0 +1,834 @@
+.gift-certificate {
+    position: relative;
+    width: 100%;
+    padding: 120px 20px;
+    background: #0d0d0d;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .gift-certificate__container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .gift-certificate__visual {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gift-certificate__cards-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    aspect-ratio: 55 / 38;
+  }
+  
+  .gift-certificate__card {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .gift-certificate__card--back {
+    top: 0;
+    left: 0;
+    transform: rotate(-8deg) translate(-30px, -20px);
+    z-index: 1;
+  }
+  
+  .gift-certificate__card--front {
+    top: 0;
+    left: 0;
+    transform: rotate(4deg) translate(20px, 10px);
+    z-index: 2;
+  }
+  
+  .gift-certificate__card:hover {
+    z-index: 3;
+  }
+  
+  .gift-certificate__card--front:hover {
+    transform: rotate(4deg) translate(20px, 10px) scale(1.02);
+  }
+  
+  .gift-certificate__card-content {
+    position: absolute;
+    inset: 0;
+    padding: 32px 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+  .gift-certificate__card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .gift-certificate__card-title-small {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+  
+  .gift-certificate__card-title-big {
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+  
+  .gift-certificate__card-title-big--cyan {
+    color: #2CE5CE;
+  }
+  
+  .gift-certificate__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .gift-certificate__card-name {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .gift-certificate__card-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .gift-certificate__card-icon {
+    font-size: 20px;
+  }
+  
+  .gift-certificate__card-icon--cyan {
+    color: #2CE5CE;
+  }
+  
+  .gift-certificate__card-duration {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  .gift-certificate__card-type {
+    color: #ff6b35;
+    font-weight: 800;
+  }
+  
+  .gift-certificate__card-type--orange {
+    color: #ff6b35;
+  }
+  
+  .gift-certificate__card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  
+  .gift-certificate__card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .gift-certificate__content {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding-right: 20px;
+  }
+  
+  .gift-certificate__title {
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  
+  .gift-certificate__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  
+  .gift-certificate__description {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+  
+  .gift-certificate__info {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+  }
+  
+  .gift-certificate__validity {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+  }
+  
+  .gift-certificate__action {
+    margin-top: 20px;
+  }
+  
+  .gift-certificate__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 80px;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid #2CE5CE;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: visible;
+    letter-spacing: 0.5px;
+  }
+  
+  .gift-certificate__button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(44, 229, 206, 0);
+    transition: box-shadow 0.4s ease;
+    z-index: -1;
+  }
+  
+  .gift-certificate__button:hover {
+    color: #2CE5CE;
+    background: rgba(44, 229, 206, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .gift-certificate__button:hover::before {
+    box-shadow: 0 0 30px rgba(44, 229, 206, 0.4),
+                0 0 60px rgba(44, 229, 206, 0.2),
+                0 0 90px rgba(44, 229, 206, 0.1);
+  }
+  
+  .gift-certificate__button:active {
+    transform: translateY(0);
+  }
+  
+  .gift-certificate__button:focus-visible {
+    outline: 3px solid #2CE5CE;
+    outline-offset: 3px;
+  }
+  
+  .gift-certificate::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(44, 229, 206, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* =========================================
+     RESPONSIVE: Large Desktop (1400px+)
+     ========================================= */
+  @media (min-width: 1400px) {
+    .gift-certificate__cards-wrapper {
+      max-width: 600px;
+    }
+    
+    .gift-certificate__card {
+      width: 540px;
+      height: 320px;
+    }
+    
+    .gift-certificate__card-content {
+      padding: 36px 44px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 24px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 36px;
+    }
+  }
+  
+  /* =========================================
+     RESPONSIVE: Desktop (1025px – 1399px)
+     ========================================= */
+  @media (max-width: 1399px) and (min-width: 1025px) {
+    .gift-certificate__container {
+      gap: 60px;
+    }
+    
+    .gift-certificate__cards-wrapper {
+      max-width: 500px;
+    }
+    
+    .gift-certificate__card {
+      width: 460px;
+      height: 280px;
+    }
+    
+    .gift-certificate__card-content {
+      padding: 28px 36px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 20px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 30px;
+    }
+  }
+  
+  /* =========================================
+     RESPONSIVE: Small Desktop / Large Tablet (900px – 1024px)
+     ========================================= */
+  @media (max-width: 1024px) and (min-width: 900px) {
+    .gift-certificate {
+      padding: 100px 20px;
+    }
+    
+    .gift-certificate__container {
+      gap: 50px;
+    }
+    
+    .gift-certificate__cards-wrapper {
+      max-width: 460px;
+      aspect-ratio: 46 / 32;
+    }
+    
+    .gift-certificate__card {
+      width: 420px;
+      height: 250px;
+    }
+    
+    .gift-certificate__card-content {
+      padding: 24px 32px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 19px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 28px;
+    }
+    
+    .gift-certificate__title {
+      font-size: clamp(34px, 4vw, 48px);
+    }
+    
+    .gift-certificate__description {
+      font-size: 19px;
+    }
+  }
+  
+  /* =========================================
+     RESPONSIVE: Tablet Landscape (769px – 899px)
+     ========================================= */
+  @media (max-width: 899px) and (min-width: 769px) {
+    .gift-certificate {
+      padding: 90px 20px;
+    }
+    
+    .gift-certificate__container {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    
+    .gift-certificate__visual {
+      order: 1;
+    }
+    
+    .gift-certificate__content {
+      order: 2;
+      text-align: center;
+      padding-right: 0;
+      align-items: center;
+    }
+    
+    .gift-certificate__cards-wrapper {
+      max-width: 420px;
+      aspect-ratio: 42 / 28;
+    }
+    
+    .gift-certificate__card {
+      width: 380px;
+      height: 230px;
+    }
+    
+    .gift-certificate__card--back {
+      transform: rotate(-7deg) translate(-25px, -18px);
+    }
+    
+    .gift-certificate__card--front {
+      transform: rotate(3.5deg) translate(18px, 9px);
+    }
+    
+    .gift-certificate__card-content {
+      padding: 22px 30px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 18px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 26px;
+    }
+    
+    .gift-certificate__title {
+      font-size: 38px;
+    }
+    
+    .gift-certificate__description {
+      font-size: 18px;
+    }
+    
+    .gift-certificate__action {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .gift-certificate__button {
+      width: 100%;
+      max-width: 320px;
+      padding: 22px 50px;
+      font-size: 19px;
+    }
+  }
+  
+  /* =========================================
+     RESPONSIVE: Tablet Portrait / Large Mobile (600px – 768px)
+     ========================================= */
+  @media (max-width: 768px) and (min-width: 600px) {
+    .gift-certificate {
+      padding: 80px 20px;
+    }
+    
+    .gift-certificate__container {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+    
+    .gift-certificate__visual {
+      order: 1;
+    }
+    
+    .gift-certificate__content {
+      order: 2;
+      text-align: center;
+      padding-right: 0;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    .gift-certificate__cards-wrapper {
+      max-width: 380px;
+      aspect-ratio: 38 / 26;
+    }
+    
+    .gift-certificate__card {
+      width: 340px;
+      height: 210px;
+    }
+    
+    .gift-certificate__card--back {
+      transform: rotate(-6deg) translate(-22px, -16px);
+    }
+    
+    .gift-certificate__card--front {
+      transform: rotate(3deg) translate(16px, 8px);
+    }
+    
+    .gift-certificate__card-content {
+      padding: 20px 28px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 17px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 24px;
+    }
+    
+    .gift-certificate__card-name {
+      font-size: 16px;
+    }
+    
+    .gift-certificate__card-duration {
+      font-size: 16px;
+    }
+    
+    .gift-certificate__card-meta {
+      font-size: 11px;
+    }
+    
+    .gift-certificate__title {
+      font-size: 34px;
+    }
+    
+    .gift-certificate__description {
+      font-size: 17px;
+    }
+    
+    .gift-certificate__info,
+    .gift-certificate__validity {
+      font-size: 15px;
+    }
+    
+    .gift-certificate__action {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .gift-certificate__button {
+      width: 100%;
+      max-width: 300px;
+      padding: 20px 45px;
+      font-size: 18px;
+    }
+  }
+  
+  /* =========================================
+     RESPONSIVE: Mobile Portrait (480px – 599px)
+     ========================================= */
+  @media (max-width: 599px) and (min-width: 480px) {
+    .gift-certificate {
+      padding: 70px 16px;
+    }
+    
+    .gift-certificate__container {
+      gap: 40px;
+    }
+    
+    .gift-certificate__cards-wrapper {
+      max-width: 340px;
+      aspect-ratio: 34 / 24;
+    }
+    
+    .gift-certificate__card {
+      width: 300px;
+      height: 190px;
+    }
+    
+    .gift-certificate__card--back {
+      transform: rotate(-5deg) translate(-18px, -14px);
+    }
+    
+    .gift-certificate__card--front {
+      transform: rotate(2.5deg) translate(14px, 7px);
+    }
+    
+    .gift-certificate__card-content {
+      padding: 18px 24px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 16px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 22px;
+    }
+    
+    .gift-certificate__card-name {
+      font-size: 15px;
+    }
+    
+    .gift-certificate__card-duration {
+      font-size: 15px;
+    }
+    
+    .gift-certificate__card-icon {
+      font-size: 18px;
+    }
+    
+    .gift-certificate__title {
+      font-size: 30px;
+    }
+    
+    .gift-certificate__description {
+      font-size: 16px;
+    }
+    
+    .gift-certificate__info,
+    .gift-certificate__validity {
+      font-size: 14px;
+    }
+    
+    .gift-certificate__text-block {
+      gap: 24px;
+    }
+    
+    .gift-certificate__button {
+      padding: 18px 40px;
+      font-size: 17px;
+      max-width: 280px;
+    }
+  }
+  
+  /* =========================================
+     RESPONSIVE: Small Mobile (360px – 479px)
+     ========================================= */
+  @media (max-width: 479px) and (min-width: 360px) {
+    .gift-certificate {
+      padding: 60px 16px;
+    }
+    
+    .gift-certificate__container {
+      gap: 35px;
+    }
+    
+    .gift-certificate__cards-wrapper {
+      max-width: 300px;
+      aspect-ratio: 30 / 22;
+    }
+    
+    .gift-certificate__card {
+      width: 270px;
+      height: 170px;
+    }
+    
+    .gift-certificate__card--back {
+      transform: rotate(-4deg) translate(-15px, -12px);
+    }
+    
+    .gift-certificate__card--front {
+      transform: rotate(2deg) translate(12px, 6px);
+    }
+    
+    .gift-certificate__card-content {
+      padding: 16px 20px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 15px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 20px;
+    }
+    
+    .gift-certificate__card-name {
+      font-size: 14px;
+    }
+    
+    .gift-certificate__card-duration {
+      font-size: 14px;
+    }
+    
+    .gift-certificate__card-meta {
+      font-size: 10px;
+      gap: 2px;
+    }
+    
+    .gift-certificate__title {
+      font-size: 28px;
+    }
+    
+    .gift-certificate__description {
+      font-size: 15px;
+    }
+    
+    .gift-certificate__info,
+    .gift-certificate__validity {
+      font-size: 14px;
+    }
+    
+    .gift-certificate__text-block {
+      gap: 20px;
+    }
+    
+    .gift-certificate__button {
+      padding: 16px 36px;
+      font-size: 16px;
+      max-width: 260px;
+    }
+  }
+  
+  /* =========================================
+     RESPONSIVE: Very Small Mobile (< 360px)
+     ========================================= */
+  @media (max-width: 359px) {
+    .gift-certificate {
+      padding: 50px 12px;
+    }
+    
+    .gift-certificate__container {
+      gap: 30px;
+    }
+    
+    .gift-certificate__cards-wrapper {
+      max-width: 260px;
+      aspect-ratio: 26 / 20;
+    }
+    
+    .gift-certificate__card {
+      width: 240px;
+      height: 150px;
+    }
+    
+    .gift-certificate__card--back {
+      transform: rotate(-3deg) translate(-12px, -10px);
+    }
+    
+    .gift-certificate__card--front {
+      transform: rotate(1.5deg) translate(10px, 5px);
+    }
+    
+    .gift-certificate__card-content {
+      padding: 14px 18px;
+    }
+    
+    .gift-certificate__card-title-small {
+      font-size: 14px;
+    }
+    
+    .gift-certificate__card-title-big {
+      font-size: 18px;
+    }
+    
+    .gift-certificate__card-name {
+      font-size: 13px;
+    }
+    
+    .gift-certificate__card-duration {
+      font-size: 13px;
+    }
+    
+    .gift-certificate__card-icon {
+      font-size: 16px;
+    }
+    
+    .gift-certificate__card-meta {
+      font-size: 9px;
+    }
+    
+    .gift-certificate__title {
+      font-size: 24px;
+    }
+    
+    .gift-certificate__description {
+      font-size: 14px;
+    }
+    
+    .gift-certificate__info,
+    .gift-certificate__validity {
+      font-size: 13px;
+    }
+    
+    .gift-certificate__text-block {
+      gap: 18px;
+    }
+    
+    .gift-certificate__button {
+      padding: 14px 32px;
+      font-size: 15px;
+      max-width: 100%;
+    }
+  }
+  
+  /* =========================================
+     ACCESSIBILITY: Reduced Motion
+     ========================================= */
+  @media (prefers-reduced-motion: reduce) {
+    .gift-certificate__card,
+    .gift-certificate__button,
+    .gift-certificate__button::before {
+      transition: none;
+    }
+    
+    .gift-certificate__card:hover,
+    .gift-certificate__button:hover {
+      transform: none;
+    }
+  }
+  
+  /* =========================================
+     ACCESSIBILITY: High Contrast Mode
+     ========================================= */
+  @media (prefers-contrast: high) {
+    .gift-certificate__card {
+      border: 2px solid #2CE5CE;
+    }
+    
+    .gift-certificate__button {
+      border-width: 3px;
+    }
+    
+    .gift-certificate__card-title-big--cyan,
+    .gift-certificate__card-icon--cyan {
+      color: #00f5d4;
+    }
+  }
+  
+  /* =========================================
+     TOUCH DEVICES: Larger touch targets
+     ========================================= */
+  @media (hover: none) and (pointer: coarse) {
+    .gift-certificate__button {
+      min-height: 56px;
+      padding: 18px 40px;
+    }
+    
+    .gift-certificate__card {
+      cursor: default;
+    }
+    
+    .gift-certificate__card:hover {
+      transform: none;
+    }
+  }

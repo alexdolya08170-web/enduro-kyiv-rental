@@ -74,13 +74,13 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/contacts" className={`header__nav-link ${location.pathname === '/contacts' ? 'header__nav-link--active' : ''}`}>
-                Контакти
+              <Link to="/faq" className={`header__nav-link ${location.pathname === '/faq' ? 'header__nav-link--active' : ''}`}>
+                Сертифікат
               </Link>
             </li>
             <li>
-              <Link to="/faq" className={`header__nav-link ${location.pathname === '/faq' ? 'header__nav-link--active' : ''}`}>
-                FAQ
+              <Link to="/contacts" className={`header__nav-link ${location.pathname === '/contacts' ? 'header__nav-link--active' : ''}`}>
+                Контакти
               </Link>
             </li>
           </ul>
@@ -106,8 +106,8 @@ const Header = () => {
           <Link to="/details" className="header__mobile-link">Деталі</Link>
           <Link to="/prices" className="header__mobile-link">Ціни</Link>
           <Link to="/tech" className="header__mobile-link">Техніка</Link>
+          <Link to="/faq" className="header__mobile-link">Сертифікат</Link>
           <Link to="/contacts" className="header__mobile-link">Контакти</Link>
-          <Link to="/faq" className="header__mobile-link">FAQ</Link>
           <div className="header__mobile-location">м.Київ</div>
         </nav>
       </div>
