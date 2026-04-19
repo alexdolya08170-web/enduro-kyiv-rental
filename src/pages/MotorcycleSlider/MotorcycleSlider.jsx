@@ -127,7 +127,7 @@ const MotorcycleSlider = () => {
             Наша техніка
           </h2>
           <p className="slider-description">
-            Кожен проходить технічне обслуговування
+            Кожен проходить обслуговування
           </p>
         </header>
 

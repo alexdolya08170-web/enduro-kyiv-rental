@@ -93,10 +93,10 @@ const Pricing = () => {
     <section className="pricing" aria-labelledby="pricing-heading">
       <header className="pricing__header">
         <h2 id="pricing-heading" className="pricing__title">
-          Тарифи
+          Тарифні плани
         </h2>
         <p className="pricing__subtitle-text">
-          Оберіть свій ідеальний формат пригод
+          Оберіть свій 
         </p>
       </header>
 

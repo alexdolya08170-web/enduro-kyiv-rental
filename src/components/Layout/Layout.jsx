@@ -8,6 +8,8 @@ import Pricing from '../../pages/Pricing/Pricing';
 import MotorcycleSlider from '../../pages/MotorcycleSlider/MotorcycleSlider';
 import BrpMaverick from '../../pages/BrpMaverick/BrpMaverick';
 import GiftCertificate from '../../pages/GiftCertificate/GiftCertificate';
+import LocationFinder from '../../pages/LocationFinder/LocationFinder';
+import CallbackForm from '../../pages/CallbackForm/CallbackForm';
 
 const Layout = () => {
   const location = useLocation();
@@ -20,8 +22,11 @@ const Layout = () => {
         <Details />
         <Pricing />
         <MotorcycleSlider />
-        <BrpMaverick />
-        <GiftCertificate />
+        {/* <BrpMaverick /> */}
+        {/* <GiftCertificate /> */}
+        <LocationFinder />
+        <CallbackForm />
+
       </main>
       {/* <FAQ /> */}
     </div>

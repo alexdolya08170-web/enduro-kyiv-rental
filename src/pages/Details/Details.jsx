@@ -29,7 +29,7 @@ const Details = () => {
   }, []);
 
   return (
-    <section className="details" aria-label="Переваги">
+    <section  id="details" className="details" aria-label="Переваги">
       <div className="details__container">
         
         {/* 🔹 Заголовок та опис */}
@@ -38,7 +38,7 @@ const Details = () => {
             Чому обирають нас
           </h2>
           <p className="details__description">
-            Ми створили умови, де кожен райдер відчуває волю
+            Ми створили умови
           </p>
         </header>
 

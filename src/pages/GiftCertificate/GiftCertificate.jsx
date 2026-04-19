@@ -3,7 +3,7 @@ import './GiftCertificate.css';
 
 const GiftCertificate = () => {
   return (
-    <section className="gift-certificate" aria-label="Подарунковий сертифікат">
+    <section id='certificate' className="gift-certificate" aria-label="Подарунковий сертифікат">
       <div className="gift-certificate__container">
         
         {/* Ліва частина — зображення карток */}

@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+/* В index.css или App.css */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Отступ для фиксированного хедера */
+}
+
+/* Убедитесь, что целевой элемент имеет id */
+#callbacks {
+  scroll-margin-top: 80px; /* Компенсация высоты хедера */
+}
+
 /* 
   2. Прибрати відступи з боку браузера 
 */
