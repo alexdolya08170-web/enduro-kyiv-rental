@@ -66,10 +66,10 @@ const LocationFinder = () => {
             <p className="location-finder__arrival-title">По прибуттю ми:</p>
             <ul className="location-finder__list">
               <li className="location-finder__list-item">
-                покажемо, де можна безпечно залишити автомобіль
+                Покажемо, де можна безпечно залишити автомобіль
               </li>
               <li className="location-finder__list-item">
-                надамо всі подальші вказівки перед виїздом
+                Надамо всі подальші вказівки перед виїздом
               </li>
             </ul>
           </div>

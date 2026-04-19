@@ -19,17 +19,6 @@ const motorcycles = [
   },
   {
     id: 2,
-    brand: 'HONDA',
-    model: 'CRF 250F',
-    image: 'https://etk-9eg.pages.dev/assets/gen/moto_crf_250f_800w.webp',
-    specs: {
-      power: '22 к.с',
-      height: '170 см',
-      engine: '249 сс'
-    }
-  },
-  {
-    id: 3,
     brand: 'YAMAHA',
     model: 'WR 250F',
     image: 'https://etk-9eg.pages.dev/assets/gen/moto_titan_250_purple_800w.webp',
@@ -40,7 +29,7 @@ const motorcycles = [
     }
   },
   {
-    id: 4,
+    id: 3,
     brand: 'KAWASAKI',
     model: 'KX 250',
     image: 'https://etk-9eg.pages.dev/assets/gen/moto_puncher_250_800w.webp',
@@ -51,7 +40,7 @@ const motorcycles = [
     }
   },
   {
-    id: 5,
+    id: 4,
     brand: 'SUZUKI',
     model: 'RM-Z 250',
     image: 'https://etk-9eg.pages.dev/assets/gen/moto_onyx_300_red_800w.webp',
@@ -62,7 +51,7 @@ const motorcycles = [
     }
   },
   {
-    id: 6,
+    id: 5,
     brand: 'KTM',
     model: '250 SX-F',
     image: 'https://etk-9eg.pages.dev/assets/gen/moto_icon_300_800w.webp',
@@ -73,7 +62,7 @@ const motorcycles = [
     }
   },
   {
-    id: 7,
+    id: 6,
     brand: 'HUSQVARNA',
     model: 'FC 250',
     image: 'https://etk-9eg.pages.dev/assets/gen/moto_atom_300_800w.webp',
@@ -84,7 +73,7 @@ const motorcycles = [
     }
   },
   {
-    id: 8,
+    id: 7,
     brand: 'BETA',
     model: '300 RR',
     image: 'https://etk-9eg.pages.dev/assets/gen/moto_nemesis_300_800w.webp',

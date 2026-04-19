@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
+import react from '@vitejs/plugin-react'
 
 const ReactCompilerConfig = {
   compilationMode: 'annotation',
@@ -8,19 +7,27 @@ const ReactCompilerConfig = {
 
 export default defineConfig({
   plugins: [
-    babel({
-      include: /\.[jt]sx?$/,
-      presets: [reactCompilerPreset(ReactCompilerConfig)],
+    react({
+      babel: {
+        plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]],
+      },
     }),
-    react(),
   ],
+  server: {
+    open: true,
+    port: 3000,
+    strictPort: true,
+    cors: true,
+  },
   build: {
     sourcemap: true,
-    target: 'esnext',
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      target: 'esnext',
+    target: 'esnext', 
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) return 'vendor'
+        },
+      },
     },
   },
 })
