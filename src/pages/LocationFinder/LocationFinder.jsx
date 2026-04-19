@@ -4,7 +4,6 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './LocationFinder.css';
 
-// Исправление иконки маркера для Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -13,7 +12,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const LocationFinder = () => {
-  const position = [50.371, 30.510]; // Координаты для Киева, Теремки
+  const position = [50.371, 30.510];
   
   const handleBuildRoute = () => {
     window.open(`https://www.google.com/maps/dir/?api=1&destination=${position[0]},${position[1]}`, '_blank');
@@ -52,12 +51,6 @@ const LocationFinder = () => {
           <h2 className="location-finder__title">Як нас знайти?</h2>
           
           <address className="location-finder__address">
-            {/* <p className="location-finder__location">
-              м.Київ. Теремки, район Феофанії
-            </p> 
-            <p className="location-finder__description">
-              Ми розташовані за МХП.
-            </p>*/}
             <p className="location-finder__landmark">
               Орієнтир — з'їзд одразу після заправки <strong className="location-finder__highlight">OKKO</strong>
             </p>

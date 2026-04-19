@@ -21,7 +21,7 @@ const CallbackForm = () => {
   };
 
   return (
-    <section id="callback" className="callback-form">
+    <section id="callbacks" className="callback-form">
       <div className="callback-form__wrapper">
         <div className="callback-form__container">
           <form 

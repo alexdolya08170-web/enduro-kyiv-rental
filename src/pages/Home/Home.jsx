@@ -21,7 +21,7 @@ const Home = () => {
               </span>
             </h1>
 
-            <Link to="/details" className="hero__cta hero__cta--primary">
+            <Link to="#prices" className="hero__cta hero__cta--primary">
               Обрати тур
             </Link>
           </div>

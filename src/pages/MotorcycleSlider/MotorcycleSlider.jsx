@@ -32,7 +32,7 @@ const motorcycles = [
     id: 3,
     brand: 'YAMAHA',
     model: 'WR 250F',
-    image: 'https://etk-9eg.pages.dev/assets/gen/moto_wr250f_800w.webp',
+    image: 'https://etk-9eg.pages.dev/assets/gen/moto_titan_250_purple_800w.webp',
     specs: {
       power: '25 к.с',
       height: '168 см',
@@ -43,7 +43,7 @@ const motorcycles = [
     id: 4,
     brand: 'KAWASAKI',
     model: 'KX 250',
-    image: 'https://etk-9eg.pages.dev/assets/gen/moto_kx250_800w.webp',
+    image: 'https://etk-9eg.pages.dev/assets/gen/moto_puncher_250_800w.webp',
     specs: {
       power: '28 к.с',
       height: '172 см',
@@ -54,7 +54,7 @@ const motorcycles = [
     id: 5,
     brand: 'SUZUKI',
     model: 'RM-Z 250',
-    image: 'https://etk-9eg.pages.dev/assets/gen/moto_rmz250_800w.webp',
+    image: 'https://etk-9eg.pages.dev/assets/gen/moto_onyx_300_red_800w.webp',
     specs: {
       power: '26 к.с',
       height: '169 см',
@@ -65,7 +65,7 @@ const motorcycles = [
     id: 6,
     brand: 'KTM',
     model: '250 SX-F',
-    image: 'https://etk-9eg.pages.dev/assets/gen/moto_250sxf_800w.webp',
+    image: 'https://etk-9eg.pages.dev/assets/gen/moto_icon_300_800w.webp',
     specs: {
       power: '30 к.с',
       height: '171 см',
@@ -76,7 +76,7 @@ const motorcycles = [
     id: 7,
     brand: 'HUSQVARNA',
     model: 'FC 250',
-    image: 'https://etk-9eg.pages.dev/assets/gen/moto_fc250_800w.webp',
+    image: 'https://etk-9eg.pages.dev/assets/gen/moto_atom_300_800w.webp',
     specs: {
       power: '29 к.с',
       height: '170 см',
@@ -87,7 +87,7 @@ const motorcycles = [
     id: 8,
     brand: 'BETA',
     model: '300 RR',
-    image: 'https://etk-9eg.pages.dev/assets/gen/moto_300rr_800w.webp',
+    image: 'https://etk-9eg.pages.dev/assets/gen/moto_nemesis_300_800w.webp',
     specs: {
       power: '32 к.с',
       height: '173 см',
@@ -118,10 +118,8 @@ const EngineIcon = () => (
 
 const MotorcycleSlider = () => {
   return (
-    <section className="motorcycle-slider" aria-label="Наш автопарк мотоциклів">
+    <section id='#motorcycle' className="motorcycle-slider" aria-label="Наш автопарк мотоциклів">
       <div className="slider-wrapper">
-        
-        {/* 🔹 Заголовок та опис */}
         <header className="slider-header">
           <h2 className="slider-title">
             Наша техніка

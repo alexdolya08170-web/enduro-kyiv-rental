@@ -32,7 +32,7 @@ const Details = () => {
     <section  id="details" className="details" aria-label="Переваги">
       <div className="details__container">
         
-        {/* 🔹 Заголовок та опис */}
+        {/*  Заголовок та опис */}
         <header className="details__header">
           <h2 className="details__title">
             Чому обирають нас

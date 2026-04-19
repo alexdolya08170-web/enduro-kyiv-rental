@@ -90,7 +90,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="pricing" aria-labelledby="pricing-heading">
+    <section id='prices' className="pricing" aria-labelledby="pricing-heading">
       <header className="pricing__header">
         <h2 id="pricing-heading" className="pricing__title">
           Тарифні плани

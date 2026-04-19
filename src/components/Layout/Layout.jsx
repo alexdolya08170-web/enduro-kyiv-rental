@@ -22,11 +22,10 @@ const Layout = () => {
         <Details />
         <Pricing />
         <MotorcycleSlider />
-        {/* <BrpMaverick /> */}
+        <BrpMaverick />
         {/* <GiftCertificate /> */}
         <LocationFinder />
         <CallbackForm />
-
       </main>
       {/* <FAQ /> */}
     </div>
