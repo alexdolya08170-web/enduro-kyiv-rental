@@ -57,14 +57,16 @@ body {
   color: #ffffff;
   background-color: #0d0d0d;
   overflow-x: hidden;
+  cursor: pointer;
 }
 
-button, input, select, textarea {
+input, select, textarea, p, h1, h2, h3, h4, h5, h6 {
   font: inherit;
   color: inherit;
   background: none;
   border: none;
   outline: none;
+  cursor: default;
 }
 
 button {
@@ -81,6 +83,7 @@ img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
   height: auto;
+  width: auto;
 }
 
 ul, ol {
