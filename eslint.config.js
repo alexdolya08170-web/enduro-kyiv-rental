@@ -7,7 +7,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
   // Игнорируем не нужные для линтинга директории
-  globalIgnores(['dist', 'node_modules', 'coverage', '.turbo', '*.min.js']),
+  globalIgnores(['node_modules', 'coverage', '.turbo', '*.min.js']),
   
   {
     files: ['**/*.{js,jsx}'],
