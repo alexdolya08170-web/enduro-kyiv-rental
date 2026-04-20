@@ -38,7 +38,7 @@ function PageMeta({ path }) {
   );
 }
 
-// Компонент-обёртка для анімації переходу + зміна заголовка
+// Компонент-обёртка для анімації переходу
 function RouteTransition({ children }) {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
@@ -87,7 +87,6 @@ function AppContent() {
   );
 }
 
-//  Корінь додатку з HelmetProvider
 function App() {
   return (
     <BrowserRouter>
