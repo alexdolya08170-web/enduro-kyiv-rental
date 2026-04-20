@@ -16,7 +16,7 @@ const CallbackForm = () => {
     // Имитация отправки данных
     await new Promise(resolve => setTimeout(resolve, 1000));
     console.log('Form data:', data);
-    alert('Дякуємо! Ми зателефонуємо вам найближчим часом.');
+    alert('Дякуємо!');
     reset();
   };
 
@@ -32,7 +32,7 @@ const CallbackForm = () => {
             <div className="callback-form__header">
               <h2 className="callback-form__title">Замовте дзвінок</h2>
               <p className="callback-form__subtitle">
-                Залиште свої контакти і ми зателефонуємо вам
+                Залиште свої контакти і ми зателефонуємо вам.
               </p>
             </div>
 
