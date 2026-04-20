@@ -6,6 +6,8 @@ const ReactCompilerConfig = {
 }
 
 export default defineConfig({
+  base: './',
+  
   plugins: [
     react({
       babel: {
@@ -13,15 +15,18 @@ export default defineConfig({
       },
     }),
   ],
+  
   server: {
     open: true,
     port: 3000,
     strictPort: true,
     cors: true,
   },
+  
   build: {
     sourcemap: true,
-    target: 'esnext', 
+    target: 'esnext',
+    outDir: 'dist', 
     rollupOptions: {
       output: {
         manualChunks: (id) => {
