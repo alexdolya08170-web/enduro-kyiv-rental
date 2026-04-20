@@ -239,11 +239,6 @@
   outline-offset: 3px;
 }
 
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-
-/* Desktop (3 columns) */
 @media (min-width: 1024px) {
   .pricing__list {
     grid-template-columns: repeat(3, 1fr);
@@ -255,7 +250,7 @@
   }
 }
 
-/* Tablets (2 columns) */
+
 @media (max-width: 1023px) and (min-width: 600px) {
   .pricing {
     padding: 60px 20px;
@@ -283,7 +278,6 @@
   }
 }
 
-/* Mobile (1 column) */
 @media (max-width: 599px) {
   .pricing {
     padding: 50px 16px;
@@ -338,7 +332,6 @@
   }
 }
 
-/* Very small devices */
 @media (max-width: 360px) {
   .pricing__item {
     max-width: 100%;
@@ -353,7 +346,6 @@
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .pricing__item,
   .pricing__image,

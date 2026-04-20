@@ -6,16 +6,15 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-  // Игнорируем не нужные для линтинга директории
   globalIgnores(['node_modules', 'coverage', '.turbo', '*.min.js']),
   
   {
     files: ['**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
-      react.configs['recommended-latest'], // Базовые правила React/JSX
-      reactHooks.configs['recommended-latest'], // Правила хуков
-      reactRefresh.configs.vite, // Интеграция с Vite HMR
+      react.configs['recommended-latest'], 
+      reactHooks.configs['recommended-latest'], 
+      reactRefresh.configs.vite, 
     ],
     languageOptions: {
       ecmaVersion: 'latest',
@@ -28,25 +27,20 @@ export default defineConfig([
     },
     settings: {
       react: {
-        version: 'detect', // Автоматически определяет версию React из package.json
+        version: 'detect', 
       },
     },
     rules: {
-      // Улучшенная настройка неиспользуемых переменных
       'no-unused-vars': ['error', {
         vars: 'all',
         args: 'after-used',
-        ignoreRestSiblings: true, // Игнорировать переменные из rest-деструктуризации
-        varsIgnorePattern: '^[A-Z_]', // Компоненты и константы
-        argsIgnorePattern: '^_', // Аргументы, начинающиеся с `_`
+        ignoreRestSiblings: true, 
+        varsIgnorePattern: '^[A-Z_]', 
+        argsIgnorePattern: '^_', 
       }],
-      
-      // Отключаем устаревшие правила (не нужны в React 17+)
-      'react/prop-types': 'off', // Отключите, если не используете propTypes
+      'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
-      
-      // Дополнительные полезные правила (опционально)
       'react-hooks/exhaustive-deps': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
     },

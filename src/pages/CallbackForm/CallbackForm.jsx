@@ -1,4 +1,3 @@
-// CallbackForm.jsx
 import { useForm } from 'react-hook-form';
 import './CallbackForm.css';
 
@@ -13,7 +12,6 @@ const CallbackForm = () => {
   });
 
   const onSubmit = async (data) => {
-    // Имитация отправки данных
     await new Promise(resolve => setTimeout(resolve, 1000));
     console.log('Form data:', data);
     alert('Дякуємо!');
@@ -29,12 +27,12 @@ const CallbackForm = () => {
             onSubmit={handleSubmit(onSubmit)}
             noValidate
           >
-            <div className="callback-form__header">
+            <header className="callback-form__header">
               <h2 className="callback-form__title">Замовте дзвінок</h2>
               <p className="callback-form__subtitle">
                 Залиште свої контакти і ми зателефонуємо вам.
               </p>
-            </div>
+            </header>
 
             <div className="callback-form__field">
               <label 
@@ -107,7 +105,7 @@ const CallbackForm = () => {
             </button>
           </form>
 
-          <div className="callback-form__contacts">
+          <address className="callback-form__contacts">
             <a 
               href="https://instagram.com" 
               target="_blank" 
@@ -144,7 +142,7 @@ const CallbackForm = () => {
               </svg>
               <span className="callback-form__contact-text">Дзвінок</span>
             </a>
-          </div>
+          </address>
         </div>
       </div>
     </section>

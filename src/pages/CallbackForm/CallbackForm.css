@@ -1,5 +1,3 @@
-/* CallbackForm.css - Компактная версия (уменьшены внешние отступы) */
-
 .callback-form {
     display: flex;
     align-items: center;
@@ -8,16 +6,16 @@
     background-image: 
       radial-gradient(circle at 20% 50%, rgba(79, 209, 197, 0.05) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(79, 209, 197, 0.03) 0%, transparent 50%);
-    padding: 12px; /* Было: 20px */
-    min-height: auto; /* Заменено с 100vh для компактности */
+    padding: 12px; 
+    min-height: auto; 
     box-sizing: border-box;
   }
   
   .callback-form__wrapper {
     background-color: #1a1a1a;
     border: 1px solid #2a2a2a;
-    border-radius: 20px; /* Чуть меньше радиус для компактности */
-    padding: 24px; /* Было: 40px */
+    border-radius: 20px; 
+    padding: 24px; 
     max-width: 900px;
     width: 100%;
     box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.4), 0 4px 8px -4px rgba(0, 0, 0, 0.3);
@@ -28,7 +26,7 @@
   .callback-form__container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px; /* Было: 48px */
+    gap: 32px; 
   }
   
   @media (min-width: 768px) {
@@ -39,17 +37,17 @@
     }
     
     .callback-form__wrapper {
-      padding: 32px; /* Было: 48px */
+      padding: 32px; 
     }
   }
   
   @media (min-width: 1024px) {
     .callback-form__wrapper {
-      padding: 40px; /* Было: 56px */
+      padding: 40px; 
     }
     
     .callback-form__container {
-      gap: 48px; /* Было: 80px */
+      gap: 48px; 
     }
   }
   
@@ -64,7 +62,7 @@
   }
   
   .callback-form__title {
-    font-size: clamp(22px, 4vw, 28px); /* Чуть компактнее */
+    font-size: clamp(22px, 4vw, 28px); 
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 6px 0;
@@ -81,7 +79,7 @@
   .callback-form__field {
     display: flex;
     flex-direction: column;
-    gap: 6px; /* Было: 8px */
+    gap: 6px; 
     position: relative;
   }
   
@@ -108,8 +106,8 @@
   .callback-form__input {
     background-color: rgba(255, 255, 255, 0.05);
     border: 2px solid #2a2a2a;
-    border-radius: 14px; /* Было: 16px */
-    padding: 14px 18px; /* Было: 16px 20px */
+    border-radius: 14px; 
+    padding: 14px 18px; 
     font-size: 15px;
     font-family: inherit;
     color: #ffffff;
@@ -181,8 +179,8 @@
   .callback-form__submit {
     background: linear-gradient(135deg, #4fd1c5, #38b2ac);
     border: none;
-    border-radius: 14px; /* Было: 16px */
-    padding: 15px 28px; /* Было: 18px 32px */
+    border-radius: 14px; 
+    padding: 15px 28px; 
     font-size: 15px;
     font-weight: 700;
     font-family: inherit;
@@ -250,8 +248,8 @@
   .callback-form__contacts {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Было: 28px */
-    padding-left: 32px; /* Было: 40px */
+    gap: 20px;
+    padding-left: 32px; 
     border-left: 1px solid #2a2a2a;
     position: relative;
   }
@@ -274,12 +272,12 @@
   .callback-form__contact-link {
     display: flex;
     align-items: center;
-    gap: 14px; /* Было: 16px */
+    gap: 14px; 
     text-decoration: none;
     color: #ffffff;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 10px 14px; /* Было: 12px 16px */
-    border-radius: 14px; /* Было: 16px */
+    padding: 10px 14px; 
+    border-radius: 14px; 
     position: relative;
     overflow: hidden;
   }
@@ -311,7 +309,7 @@
   
   .callback-form__contact-icon {
     flex-shrink: 0;
-    width: 44px; /* Было: 48px */
+    width: 44px; 
     height: 44px;
     border-radius: 50%;
     display: flex;
@@ -345,38 +343,34 @@
   }
   
   .callback-form__contact-text {
-    font-size: 16px; /* Было: 18px */
+    font-size: 16px; 
     font-weight: 600;
     position: relative;
     z-index: 1;
   }
   
-  /* =========================================
-     MOBILE ADAPTIVE
-     ========================================= */
-  
   @media (max-width: 767px) {
     .callback-form {
-      padding: 10px; /* Было: 16px */
+      padding: 10px; 
       min-height: auto;
       align-items: stretch;
     }
     
     .callback-form__wrapper {
-      padding: 20px 16px; /* Было: 32px 24px */
+      padding: 20px 16px; 
       border-radius: 16px;
     }
     
     .callback-form__container {
-      gap: 28px; /* Было: 40px */
+      gap: 28px;
     }
     
     .callback-form__contacts {
       padding-left: 0;
       border-left: none;
       border-top: 1px solid #2a2a2a;
-      padding-top: 24px; /* Было: 32px */
-      gap: 14px; /* Было: 16px */
+      padding-top: 24px; 
+      gap: 14px; 
     }
     
     .callback-form__contacts::before {
@@ -415,7 +409,7 @@
   
   @media (max-width: 480px) {
     .callback-form__wrapper {
-      padding: 16px 12px; /* Было: 24px 20px */
+      padding: 16px 12px; 
     }
     
     .callback-form__subtitle {
@@ -441,9 +435,6 @@
     }
   }
   
-  /* =========================================
-     ACCESSIBILITY & PRINT
-     ========================================= */
   
   @media (prefers-reduced-motion: reduce) {
     *,

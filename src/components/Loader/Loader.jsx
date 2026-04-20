@@ -91,7 +91,6 @@ export default function Loader({ isExiting = false }) {
       <div className="loader-glow-bottom" />
 
       <div className="loader-container">
-        {/* Изображение */}
         <div
           className="loader-image-wrapper"
           style={{
@@ -128,7 +127,6 @@ export default function Loader({ isExiting = false }) {
           </div>
         </div>
 
-        {/* Текст в одну строку */}
         <div
           className="loader-text-row"
           style={{
@@ -144,10 +142,8 @@ export default function Loader({ isExiting = false }) {
           <span className="loader-location">в Києві</span>
         </div>
 
-        {/* Полоса загрузки */}
         <LoadingBar progress={progress} />
 
-        {/* Нижние декоративные полосы */}
         <div
           className="loader-bottom-bars"
           style={{ transition: 'opacity 0.3s ease', opacity: isExiting ? 0 : 1 }}

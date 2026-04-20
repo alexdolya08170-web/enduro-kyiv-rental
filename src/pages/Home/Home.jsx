@@ -1,4 +1,3 @@
-// src/pages/Home/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -11,7 +10,6 @@ const Home = () => {
 
         <div className="container hero__container">
 
-          {/* Лівий блок — Заголовок та CTA */}
           <div className="hero__left">
             <h1 className="hero__title">
               <span className="hero__title-top">Ендуро</span>
@@ -26,16 +24,15 @@ const Home = () => {
             </Link>
           </div>
 
-          {/* Центральний блок — Мотоцикл */}
           <div className="hero__center">
             <img
               src="https://etk-9eg.pages.dev/assets/gen/hero_moto_1400w.webp"
               alt="Райдер на ендуро мотоциклі"
               className="hero__moto-img"
-              loading="lazy" // Змінено на lazy loading
-              width="600"    // Додано для запобігання CLS (Cumulative Layout Shift)
-              height="500"   // Додано для запобігання CLS
-              decoding="async" // Додаткова оптимізація декодування
+              loading="lazy" 
+              width="600"    
+              height="500"   
+              decoding="async" 
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = 'https://via.placeholder.com/600x500/0d1a1a/00d4aa?text=Enduro+Rider';
@@ -52,7 +49,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Правий блок — Слоган */}
           <div className="hero__right">
             <div className="hero__slogan">
               <p className="hero__slogan-main">Свобода без компромісів.</p>

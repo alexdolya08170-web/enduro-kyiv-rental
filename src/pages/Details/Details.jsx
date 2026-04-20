@@ -32,7 +32,6 @@ const Details = () => {
     <section  id="details" className="details" aria-label="Переваги">
       <div className="details__container">
         
-        {/*  Заголовок та опис */}
         <header className="details__header">
           <h2 className="details__title">
             Чому обирають нас
@@ -43,8 +42,6 @@ const Details = () => {
         </header>
 
         <div className="details__grid">
-
-          {/* Card 1 - Dark with helmet icon */}
           <div
             ref={(el) => (cardRefs.current[0] = el)}
             className={`details__card details__card--dark ${
@@ -88,7 +85,6 @@ const Details = () => {
             </p>
           </div>
 
-          {/* Card 2 - Cyan gradient with trophy icon */}
           <div
             ref={(el) => (cardRefs.current[1] = el)}
             className={`details__card details__card--cyan ${
@@ -148,7 +144,6 @@ const Details = () => {
             </p>
           </div>
 
-          {/* Card 3 - Dark with mountain icon */}
           <div
             ref={(el) => (cardRefs.current[2] = el)}
             className={`details__card details__card--dark ${
