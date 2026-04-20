@@ -1,18 +1,53 @@
-# React + Vite
+# Enduro Kyiv
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сервис аренды эндуро-мотоциклов в Киеве. 
 
-Currently, two official plugins are available:
+## О проекте
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Enduro Kyiv разработан как приложение (SPA) для удобного взаимодействия с клиентами. Основной фокус сделан на визуальную презентацию техники, интуитивно понятный интерфейс бронирования и адаптивность под все типы устройств.
 
-## React Compiler
+Проект решает задачу упрощения процесса аренды: клиент может выбрать подходящий мотоцикл, изучить его особенности и отправить запрос на бронирование.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Основные функции
 
-Note: This will impact Vite dev & build performances.
+- Каталог мотоциклов с карточками товаров
+- Интерактивный слайдер для просмотра моделей
+- Отображение технических характеристик (объем двигателя, мощность, вес и др.)
+- Форма обратной связи
+- Адаптивная верстка для мобильных устройств, планшетов и десктопов
+- Анимированные элементы интерфейса (лоадеры, ховер-эффекты)
 
-## Expanding the ESLint configuration
+## Технологический стек
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Проект реализован с использованием следующих технологий:
+
+- React (библиотека для построения пользовательского интерфейса)
+- React Router (маршрутизация внутри приложения)
+- CSS3 (стилизация, анимации, медиа-запросы)
+- JavaScript / JSX (логика компонентов)
+- Git (система контроля версий)
+
+## Структура проекта
+
+- src/
+  - components/ (переиспользуемые UI-компоненты: слайдеры, кнопки, формы)
+  - pages/ (основные страницы приложения)
+  - assets/ (изображения, стили, шрифты)
+  - App.jsx (корневой компонент и маршруты)
+  - main.jsx (точка входа)
+
+## Установка и запуск
+
+Для запуска проекта локально выполните следующие действия:
+
+1. Клонирование репозитория:
+   git clone https://github.com/ваш-юзернейм/enduro-kyiv.git
+
+2. Переход в директорию проекта:
+   cd enduro-kyiv
+
+3. Установка зависимостей:
+   npm install
+
+4. Запуск режима разработки:
+   npm run dev
