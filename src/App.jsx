@@ -3,10 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
-import NotFound from './pages/NotFound/NotFound';
 import Loader from './components/Loader/Loader';
 
-// Конфігурація мета-тегів для кожного роуту
 const routeMeta = {
   '/': {
     title: 'ETK — Ендуро прокат в Києві',
@@ -18,10 +16,8 @@ const routeMeta = {
     description: 'Сторінка, яку ви шукаєте, не існує.',
     canonical: 'https://etk.com.ua/404'
   }
-  // Додавайте нові роути за потребою
 };
 
-// Компонент для управління SEO-тегами
 function PageMeta({ path }) {
   const meta = routeMeta[path] || routeMeta['/not-found'];
   
@@ -38,7 +34,6 @@ function PageMeta({ path }) {
   );
 }
 
-// Компонент-обёртка для анімації переходу
 function RouteTransition({ children }) {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
@@ -61,7 +56,6 @@ function RouteTransition({ children }) {
   );
 }
 
-// Основний контент додатку
 function AppContent() {
   const [appLoading, setAppLoading] = useState(true);
   const location = useLocation();
@@ -80,7 +74,6 @@ function AppContent() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </RouteTransition>
