@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { margin: 0; padding: 0; }
+
+/* ========== АНИМАЦИИ ========== */
+@keyframes pulseRing {
+  0%, 100% { transform: scale(0.95); opacity: 0.6; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-120px) translateX(40px) scale(0.3); opacity: 0; }
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* ========== БАЗОВЫЕ СТИЛИ ========== */
+.loader-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.loader-page:not(.loader-page-mounted) { opacity: 0; }
+.loader-page-mounted { animation: fadeIn 0.4s ease-out forwards; }
+.loader-page-exiting { pointer-events: none; }
+
+/* Фон: сетка */
+.loader-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    linear-gradient(rgba(79, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Свечение */
+.loader-glow-top,
+.loader-glow-bottom {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #4FFFFF;
+  pointer-events: none;
+}
+.loader-glow-top {
+  top: 25%; left: 25%;
+  width: 384px; height: 384px;
+  opacity: 0.1; filter: blur(128px);
+}
+.loader-glow-bottom {
+  bottom: 25%; right: 25%;
+  width: 256px; height: 256px;
+  opacity: 0.05; filter: blur(128px);
+}
+
+/* Контейнер */
+.loader-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 16px;
+}
+
+/* Изображение */
+.loader-image-wrapper {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  animation: pulseRing 2s ease-out infinite, fadeIn 0.8s ease-out 0.1s forwards;
+}
+.loader-image-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(79, 255, 255, 0.15), 0 0 60px rgba(79, 255, 255, 0.05);
+  animation: breathe 3s ease-in-out infinite;
+}
+.loader-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Пыль */
+.loader-dust-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.loader-dust-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatParticle linear infinite;
+}
+.loader-gradient-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 128px;
+  background: linear-gradient(to top, rgba(10,10,10,0.8), transparent);
+  pointer-events: none;
+}
+
+/* Текст в одну строку */
+.loader-text-row {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.4s forwards;
+}
+.loader-title {
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+}
+.loader-shimmer {
+  background: linear-gradient(90deg, #4FFFFF 0%, #ffffff 50%, #4FFFFF 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.loader-subtitle {
+  font-size: clamp(24px, 6vw, 32px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Oswald', sans-serif;
+}
+.loader-location {
+  color: #4FFFFF;
+  font-size: clamp(24px, 6vw, 32px);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Полоса загрузки */
+.loader-loading-section {
+  width: 100%;
+  margin-top: 24px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.6s forwards;
+}
+.loader-loading-track {
+  width: 100%;
+  height: 8px;
+  background-color: rgb(38, 38, 38);
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(79, 255, 255, 0.15), 0 0 60px rgba(79, 255, 255, 0.05);
+}
+.loader-loading-fill {
+  height: 100%;
+  border-radius: 9999px;
+  box-shadow: 0 0 15px rgba(79, 255, 255, 0.6), 0 0 30px rgba(79, 255, 255, 0.3);
+  background: linear-gradient(90deg, #4FFFFF, #a3fffe, #4FFFFF);
+}
+.loader-loading-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+.loader-loading-label {
+  color: rgb(115, 115, 115);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.loader-loading-percent {
+  color: #4FFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Нижние полосы */
+.loader-bottom-bars {
+  margin-top: 24px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.9s forwards;
+}
+.loader-bars-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.loader-bar {
+  width: 4px;
+  border-radius: 9999px;
+  background-color: #4FFFFF;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 480px) {
+  .loader-text-row { gap: 8px; }
+  .loader-title { font-size: 28px; }
+  .loader-subtitle { font-size: 24px; }
+  .loader-location { font-size: 16px; }
+  .loader-container { margin: 0 12px; }
+  .loader-image-container { border-radius: 12px; }
+}
+
+/* ========== ДОСТУПНОСТЬ ========== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .loader-shimmer {
+    animation: none !important;
+    background: #4FFFFF !important;
+    -webkit-text-fill-color: #4FFFFF !important;
+  }
+}
