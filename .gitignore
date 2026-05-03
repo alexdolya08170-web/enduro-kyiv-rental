@@ -1,15 +1,12 @@
 # Dependencies
-node_modules/
 .pnp/
 .pnp.js
 
 # Build outputs
-dist/
 build/
 .next/
 .nuxt/
 out/
-.vite/
 
 # TypeScript cache
 *.tsbuildinfo
