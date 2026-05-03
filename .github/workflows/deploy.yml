@@ -3,15 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"] 
-  workflow_dispatch: # Позволяет запускать деплой вручную из вкладки Actions
+  workflow_dispatch: 
 
-# Права, необходимые для GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Отменяем предыдущие запуски, если запушены новые коммиты
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -50,3 +48,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        

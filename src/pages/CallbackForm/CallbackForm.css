@@ -54,7 +54,7 @@
   .callback-form__form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Было: 24px */
+    gap: 20px; 
   }
   
   .callback-form__header {

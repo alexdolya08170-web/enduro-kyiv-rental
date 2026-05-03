@@ -3,7 +3,6 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { margin: 0; padding: 0; }
 
-/* ========== АНИМАЦИИ ========== */
 @keyframes pulseRing {
   0%, 100% { transform: scale(0.95); opacity: 0.6; }
   50% { transform: scale(1.02); opacity: 1; }
@@ -24,7 +23,6 @@ body { margin: 0; padding: 0; }
 }
 @keyframes fadeIn { to { opacity: 1; } }
 
-/* ========== БАЗОВЫЕ СТИЛИ ========== */
 .loader-page {
   min-height: 100vh;
   display: flex;
@@ -42,7 +40,6 @@ body { margin: 0; padding: 0; }
 .loader-page-mounted { animation: fadeIn 0.4s ease-out forwards; }
 .loader-page-exiting { pointer-events: none; }
 
-/* Фон: сетка */
 .loader-grid {
   position: absolute;
   inset: 0;
@@ -54,7 +51,6 @@ body { margin: 0; padding: 0; }
   pointer-events: none;
 }
 
-/* Свечение */
 .loader-glow-top,
 .loader-glow-bottom {
   position: absolute;
@@ -73,7 +69,6 @@ body { margin: 0; padding: 0; }
   opacity: 0.05; filter: blur(128px);
 }
 
-/* Контейнер */
 .loader-container {
   position: relative;
   z-index: 10;
@@ -85,7 +80,6 @@ body { margin: 0; padding: 0; }
   margin: 0 16px;
 }
 
-/* Изображение */
 .loader-image-wrapper {
   position: relative;
   width: 100%;
@@ -107,7 +101,6 @@ body { margin: 0; padding: 0; }
   display: block;
 }
 
-/* Пыль */
 .loader-dust-overlay {
   position: absolute;
   inset: 0;
@@ -129,7 +122,6 @@ body { margin: 0; padding: 0; }
   pointer-events: none;
 }
 
-/* Текст в одну строку */
 .loader-text-row {
   margin-top: 24px;
   display: flex;
@@ -170,7 +162,6 @@ body { margin: 0; padding: 0; }
   font-family: 'Oswald', sans-serif;
 }
 
-/* Полоса загрузки */
 .loader-loading-section {
   width: 100%;
   margin-top: 24px;
@@ -211,7 +202,6 @@ body { margin: 0; padding: 0; }
   font-variant-numeric: tabular-nums;
 }
 
-/* Нижние полосы */
 .loader-bottom-bars {
   margin-top: 24px;
   opacity: 0;
@@ -228,7 +218,6 @@ body { margin: 0; padding: 0; }
   background-color: #4FFFFF;
 }
 
-/* ========== АДАПТИВНОСТЬ ========== */
 @media (max-width: 480px) {
   .loader-text-row { gap: 8px; }
   .loader-title { font-size: 28px; }
@@ -238,7 +227,6 @@ body { margin: 0; padding: 0; }
   .loader-image-container { border-radius: 12px; }
 }
 
-/* ========== ДОСТУПНОСТЬ ========== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
