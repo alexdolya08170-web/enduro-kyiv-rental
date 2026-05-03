@@ -2,16 +2,15 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Или ваша ветка
+    branches: ["main"] 
   workflow_dispatch:
 
-# Разрешения для деплоя
+
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Отмена предыдущих запусков, если запушили новый коммит
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -33,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build # Убедитесь, что эта команда создает папку dist/ или out/
+        run: npm run build 
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -42,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: ./dist # ИЛИ ./out, зависит от вашего фреймворка (Vite=dist, Next=out)
+          path: ./dist 
           retention-days: 1
 
   deploy:
