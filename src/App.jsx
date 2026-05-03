@@ -10,25 +10,28 @@ const routeMeta = {
     title: 'ETK — Ендуро прокат в Києві',
     description: 'Оренда ендуро мотоциклів у Києві. Професійна техніка, маршрути, інструктаж.',
     canonical: 'https://etk.com.ua/'
-  },
-  '/not-found': {
-    title: 'Сторінку не знайдено',
-    description: 'Сторінка, яку ви шукаєте, не існує.',
-    canonical: 'https://etk.com.ua/404'
   }
 };
 
-function PageMeta({ path }) {
-  const meta = routeMeta[path] || routeMeta['/not-found'];
-  
+function PageMeta({ path, customTitle, customDescription, customCanonical }) {
+  const staticMeta = path ? routeMeta[path] : null;
+  const title = customTitle || staticMeta?.title || defaultMeta.title;
+  const description = customDescription || staticMeta?.description || defaultMeta.description;
+  const canonical = customCanonical || staticMeta?.canonical || defaultMeta.canonical;
+
   return (
     <Helmet>
-      <title>{meta.title}</title>
-      <meta name="description" content={meta.description} />
-      <link rel="canonical" href={meta.canonical} />
-      <meta property="og:title" content={meta.title} />
-      <meta property="og:description" content={meta.description} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonical} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:site_name" content="ETK Enduro" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
       <meta name="robots" content="index, follow" />
     </Helmet>
   );
