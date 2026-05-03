@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   min-height: 100vh;
-  background: #0d0d0d;
+  background: rgb(13, 13, 13);
 }
 
 .hero__bg-gradient {
@@ -65,7 +65,7 @@
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.95;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   display: block;
 }
 
@@ -81,7 +81,7 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: #5efcfb;
+  color: rgb(94, 252, 251);
 }
 
 .hero__title-white {
@@ -89,10 +89,9 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
 }
 
-/* CTA Button */
 .hero__cta--primary {
   display: inline-flex;
   align-items: center;
@@ -106,8 +105,8 @@
   border: none;
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   align-self: flex-start;
-  background: linear-gradient(135deg, #5efcfb 0%, #00d4aa 100%);
-  color: #0a1a1a;
+  background: linear-gradient(135deg, rgb(94, 252, 251) 0%, rgb(0, 212, 170) 100%);
+  color: rgb(10, 26, 26);
   box-shadow:
     0 4px 30px rgba(0, 212, 170, 0.3),
     0 0 60px rgba(0, 212, 170, 0.1),
@@ -298,7 +297,7 @@
 .hero__slogan-main {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: 600;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   letter-spacing: -0.01em;
   line-height: 1.4;
 }

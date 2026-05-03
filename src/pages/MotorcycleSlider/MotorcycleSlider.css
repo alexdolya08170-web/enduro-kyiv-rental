@@ -1,7 +1,7 @@
 .motorcycle-slider {
   position: relative;
   width: 100%;
-  background: #080d0d;
+  background: rgb(8, 13, 13);
   overflow: hidden;
 }
 
@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle 500px at center, #2a4a4a 0%, #1e3a3a 30%, #0f1f1f 60%, #080d0d 100%);
+  background: radial-gradient(circle 500px at center, rgb(42, 74, 74) 0%, rgb(30, 58, 58) 30%, rgb(15, 31, 31) 60%, rgb(8, 13, 13) 100%);
   padding: 50px 100px 35px;
   box-sizing: border-box;
   position: relative;
@@ -41,7 +41,7 @@
 .slider-title {
   font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   font-weight: 900;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   margin: 0 0 10px 0;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -80,7 +80,7 @@
 .brand-name {
   font-size: clamp(1.8rem, 2.5vw, 2.5rem);
   font-weight: 800;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -90,7 +90,7 @@
 .model-name {
   font-size: clamp(0.9rem, 1.3vw, 1.1rem);
   font-weight: 400;
-  color: #8faeb0;
+  color: rgb(143, 174, 176);
   margin: 0 0 14px 0;
   font-style: italic;
 }
@@ -147,7 +147,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   font-size: clamp(0.9rem, 1.3vw, 1.05rem);
   font-weight: 600;
 }
@@ -182,7 +182,7 @@
 }
 
 .nav-btn:focus-visible {
-  outline: 2px solid #2CE5CE;
+  outline: 2px solid rgb(44, 229, 206);
   outline-offset: 2px;
 }
 
@@ -195,8 +195,8 @@
 }
 
 .book-button {
-  background: #4fffff;
-  color: #000;
+  background: rgb(79, 255, 255);
+  color: rgb(0, 0, 0);
   border: none;
   padding: 12px 42px;
   font-size: clamp(0.75rem, 1.3vw, 0.85rem);
@@ -211,7 +211,7 @@
 }
 
 .book-button:hover {
-  background: #2de6e6;
+  background: rgb(45, 230, 230);
   transform: translateY(-2px);
   box-shadow: 0 0 35px rgba(79, 255, 255, 0.5),
               0 0 70px rgba(79, 255, 255, 0.2);
@@ -222,7 +222,7 @@
 }
 
 .book-button:focus-visible {
-  outline: 3px solid #ffffff;
+  outline: 3px solid rgb(255, 255, 255);
   outline-offset: 3px;
 }
 
@@ -297,15 +297,31 @@
   .book-button { width: 100%; max-width: 100%; padding: 11px 22px; font-size: 0.75rem; }
 }
 
+/* 
+   Переписано без !important.
+   В рамках media query эти правила имеют приоритет над общими стилями, 
+   так как находятся ниже и имеют ту же специфичность.
+*/
 @media (prefers-reduced-motion: reduce) {
-  .bike-img-wrapper img, .book-button, .nav-btn { transition: none !important; }
-  .bike-img-wrapper:hover img { transform: none !important; }
-  .book-button:hover, .nav-btn:hover { transform: none !important; }
+  .bike-img-wrapper img, 
+  .book-button, 
+  .nav-btn { 
+    transition: none; 
+  }
+  
+  .bike-img-wrapper:hover img { 
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); 
+  }
+  
+  .book-button:hover, 
+  .nav-btn:hover { 
+    transform: none; 
+  }
 }
 
 @media (prefers-contrast: high) {
   .bike-img-wrapper { border-color: rgba(255, 255, 255, 0.3); }
-  .book-button { border: 2px solid #000; }
+  .book-button { border: 2px solid rgb(0, 0, 0); }
 }
 
 @media (hover: none) and (pointer: coarse) {

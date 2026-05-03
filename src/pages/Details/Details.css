@@ -2,7 +2,7 @@
   padding: 100px 20px;
   position: relative;
   overflow: hidden;
-  background: #0d0d0d;
+  background: rgb(13, 13, 13);
   width: 100%;
   box-sizing: border-box;
 }
@@ -42,7 +42,7 @@
 .details__title {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 900;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   margin: 0 0 20px 0;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -107,7 +107,7 @@
 }
 
 .details__card--dark {
-  background: linear-gradient(170deg, #1e1e1e 0%, #141414 100%);
+  background: linear-gradient(170deg, rgb(30, 30, 30) 0%, rgb(20, 20, 20) 100%);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -117,7 +117,7 @@
 }
 
 .details__card--cyan {
-  background: linear-gradient(160deg, #5efcfb 0%, #00d4aa 100%);
+  background: linear-gradient(160deg, rgb(94, 252, 251) 0%, rgb(0, 212, 170) 100%);
   box-shadow: 0 8px 40px rgba(0, 212, 170, 0.25),
     0 0 80px rgba(0, 212, 170, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -140,13 +140,13 @@
 
 .details__icon--cyan {
   background: rgba(0, 212, 170, 0.15);
-  color: #00d4aa;
+  color: rgb(0, 212, 170);
   box-shadow: 0 4px 20px rgba(0, 212, 170, 0.2);
 }
 
 .details__icon--dark {
   background: rgba(0, 0, 0, 0.25);
-  color: #0a0a0a;
+  color: rgb(10, 10, 10);
 }
 
 .details__card-title {
@@ -154,12 +154,12 @@
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   margin: 0;
 }
 
 .details__card-title--dark {
-  color: #0a0a0a;
+  color: rgb(10, 10, 10);
 }
 
 .details__card-text {
