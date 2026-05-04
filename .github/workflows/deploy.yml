@@ -33,11 +33,19 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Check dist folder content
+        run: |
+          echo "=== Listing dist folder ==="
+          ls -laR ./dist
+          echo "=== Checking for symlinks ==="
+          find ./dist -type l || echo "No symlinks found"
+          if [ -z "$(ls -A ./dist)" ]; then
+            echo "Error: dist folder is empty!"
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Check dist folder
-        run: ls -la ./dist
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -45,7 +53,7 @@ jobs:
           name: github-pages
           path: ./dist
           retention-days: 1
-          exclusion-patterns: '**/node_modules/**'
+          if-no-files-found: error
 
   deploy:
     environment:

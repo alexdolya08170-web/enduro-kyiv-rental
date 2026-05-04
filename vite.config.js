@@ -1,24 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const ReactCompilerConfig = {
-  compilationMode: 'annotation',
-}
-
 export default defineConfig({
   base: './',
   
   plugins: [
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]],
-      },
-    }),
+    react(),
   ],
   
   server: {
     open: true,
-    port: 3001, 
+    port: 3000, 
     strictPort: false, 
     cors: true,
   },
